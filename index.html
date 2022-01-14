@@ -55,21 +55,49 @@
             box-shadow: 0px 0px 5px black;
         }
 
-        #survey-form div {
+        #survey-form>div {
             padding: 20px;
         }
 
         #survey-form label {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             text-shadow: 2px 2px 3px black;
             display: flex;
             padding: 5px;
         }
 
-        #survey-form input {
-            width: 500px;
+        #survey-form .width {
+            width: 600px;
             height: 30px;
             border-radius: 5px;
+        }
+
+        #survey-form select option {
+            font-size: 1.1rem;
+            width: 500px;
+            height: 30px;
+            border-radius: 10px;
+        }
+
+        .radio {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+        }
+
+        #btn {
+            font-size: 1.3rem;
+            padding: 10px;
+            width: 25vh;
+            margin: 14px 1px 2px 225px;
+            background-color: #10bf93;
+        }
+        #drop-down{
+            font-size: 1.1rem;
+            width: 600px;
+            height: 30px;
+            border-radius: 5px;
+
         }
     </style>
 </head>
@@ -82,33 +110,85 @@
     <form action="/backend.php" id="survey-form">
         <div>
             <label for="name">Name</label>
-            <input type="text" name="name" id="name">
+            <input class="width" type="text" name="name" id="name" placeholder="Enter your name">
         </div>
         <div>
             <label for="email">Email</label>
-            <input type="email" name="email" id="email">
+            <input class="width" type="email" name="email" required id="email" placeholder="Enter your email">
         </div>
         <div>
             <label for="number">Age</label>
-            <input type="number" name="age" id="number" min="0" max="100">
+            <input class="width" type="number" name="age" id="number" min="0" max="100" placeholder="Age">
         </div>
         <div>
-            <label id="dropdown-label"></label>
-            <select id="drop-down">
+            <label id="dropdown-label">Which option best describes your current role?</label>
+            <select class="width" id="drop-down">
+                <option value disabled selected>Select current role</option>
                 <option value="Student">Student</option>
                 <option value="Full-time ">Full-time</option>
                 <option value="Part-time">Part-time</option>
                 <option value="Prefer not say">Prefer not say</option>
-                <option value="Unemployeed">Unemployeed</option>
                 <option value="Others">Others</option>
             </select>
+        </div>
+        <div>
+            <label>Would you recommend us to a friend?</label>
 
+            <div class="radio">
+                <label class="mRadio" for="definately">Definitely</label>
+                <input type="radio" name="dmn" id="definately" value="D">
+            </div>
 
+            <div class="radio">
+                <label class="mRadio" for="mayb">Maybe</label>
+                <input type="radio" name="dmn" id="mayb" value="M">
+            </div>
+
+            <div class="radio">
+                <label class="mRadio" for="ns">Not sure</label>
+                <input type="radio" name="dmn" id="ns" value="N">
+            </div>
 
         </div>
-        </div>
+        <div>
+            <label id="dropdown-label">What is your favorite feature of our service?</label>
+            <select id="drop-down">
+                <option value disabled selected>Select current role</option>
+                <option value="Student">Student</option>
+                <option value="Full-time ">Full-time</option>
+                <option value="Part-time">Part-time</option>
+                <option value="Prefer not say">Prefer not say</option>
+                <option value="Others">Others</option>
+            </select>
         </div>
 
+        <div>
+            <label>What would you like to see improved?</label>
+            <div class="radio">
+                <input type="checkbox" name="front-end" id="fep">
+                <label for="fep">Front-end Projects</label>
+            </div>
+            <div class="radio">
+                <input type="checkbox" name="fack-end" id="bep">
+                <label for="bep">Back-end Projects</label>
+            </div>
+            <div class="radio">
+                <input type="checkbox" name="dateV" id="dv">
+                <label for="dv">Data Visualization</label>
+            </div>
+            <div class="radio">
+                <input type="checkbox" name="challenges" id="challenges">
+                <label for="challenges">Challenges</label>
+            </div>
+
+            <div>
+                <label for="comment">Any comments or suggestions?</label>
+                <textarea name="comment" id="comment" cols="70" rows="10" placeholder="Enter any comments"></textarea>
+            </div>
+
+            <input type="submit" value="Submit" id='btn'>
+
+        </div>
 
 
 
