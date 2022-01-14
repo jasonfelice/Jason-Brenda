@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <title>Please fill out this survey</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(115deg, rgba(0, 0, 255, 0.425), rgba(255, 255, 255, 0.432)), url('https://cdn.pixabay.com/photo/2019/10/07/10/30/programming-4532296_1280.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            z-index: -1;
+        }
+        #head{
+            display: block;
+            width: 25vw;
+            text-align: center;
+            margin: 2px auto 2px;
+            padding: 30px;
+            font-size: 1.5rem;
+            text-shadow: 2px 2px 3px black;
+        }
+
+        body {
+            font-family: 'Ubuntu Mono', monospace;
+            color: white;
+        }
+        #survey-form{
+            /* border: 1px solid black; */
+            background-color: rgba(10, 78, 133, 0.836);
+            display: flex;
+            flex-direction: column;
+            width: 35vw;
+            margin: 2px auto 2px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px black;
+        }
+        #survey-form div{
+            padding: 20px;
+        }
+        #survey-form label{
+            font-size: 1.4rem;
+            text-shadow: 2px 2px 3px black;
+            display: flex;
+            padding: 5px;
+        }
+        #survey-form input{
+            width: 500px;
+            height: 30px;
+            border-radius: 5px;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <header id="head">
+        <h1 id="title">Survey Form</h1>
+        <p id="description">This is a description</p>
+    </header>
+    <form action="/backend.php" id="survey-form">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div>
+            <label for="number">Age</label>
+            <input type="number" name="age" id="number">
+        </div>
+
+
+
+
+
+
+    </form>
+</body>
+
+</html>
