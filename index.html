@@ -10,10 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
     <title>Please fill out this survey</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
+
         body::before {
             content: '';
             position: fixed;
@@ -27,7 +28,8 @@
             background-size: cover;
             z-index: -1;
         }
-        #head{
+
+        #head {
             display: block;
             width: 25vw;
             text-align: center;
@@ -41,7 +43,8 @@
             font-family: 'Ubuntu Mono', monospace;
             color: white;
         }
-        #survey-form{
+
+        #survey-form {
             /* border: 1px solid black; */
             background-color: rgba(10, 78, 133, 0.836);
             display: flex;
@@ -51,22 +54,23 @@
             border-radius: 10px;
             box-shadow: 0px 0px 5px black;
         }
-        #survey-form div{
+
+        #survey-form div {
             padding: 20px;
         }
-        #survey-form label{
+
+        #survey-form label {
             font-size: 1.4rem;
             text-shadow: 2px 2px 3px black;
             display: flex;
             padding: 5px;
         }
-        #survey-form input{
+
+        #survey-form input {
             width: 500px;
             height: 30px;
             border-radius: 5px;
         }
-        
-
     </style>
 </head>
 
@@ -86,10 +90,24 @@
         </div>
         <div>
             <label for="number">Age</label>
-            <input type="number" name="age" id="number">
+            <input type="number" name="age" id="number" min="0" max="100">
         </div>
+        <div>
+            <label id="dropdown-label"></label>
+            <select id="drop-down">
+                <option value="Student">Student</option>
+                <option value="Full-time ">Full-time</option>
+                <option value="Part-time">Part-time</option>
+                <option value="Prefer not say">Prefer not say</option>
+                <option value="Unemployeed">Unemployeed</option>
+                <option value="Others">Others</option>
+            </select>
 
 
+
+        </div>
+        </div>
+        </div>
 
 
 
